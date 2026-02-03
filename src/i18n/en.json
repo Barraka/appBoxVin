@@ -1,0 +1,67 @@
+{
+  "welcome": {
+    "title": "The Last Vintage",
+    "subtitle": "Hint Booklet",
+    "tagline": "An adventure by Escape Yourself",
+    "startButton": "Start the adventure",
+    "resumeButton": "Resume game",
+    "newGameButton": "New game",
+    "confirmReset": "Are you sure you want to start over? Your progress will be lost."
+  },
+  "introduction": {
+    "title": "Foreword",
+    "readFirst": "Please read carefully before starting the game",
+    "continueButton": "Let's go!"
+  },
+  "tableOfContents": {
+    "title": "Table of Contents",
+    "boxOpening": "Opening the Box",
+    "locked": "Locked",
+    "available": "Available",
+    "completed": "Completed",
+    "puzzle": "Puzzle"
+  },
+  "boxOpening": {
+    "title": "Opening the Box",
+    "step": "Step",
+    "nextStep": "Next step",
+    "done": "I've opened the Box!",
+    "backToMenu": "Back to menu"
+  },
+  "puzzle": {
+    "hint": "Hint",
+    "solution": "Solution",
+    "revealHint": "Reveal hint",
+    "revealSolution": "Reveal solution",
+    "completed": "I've solved this puzzle!",
+    "alreadyCompleted": "Puzzle solved",
+    "backToMenu": "Back to menu",
+    "nextPuzzle": "Next puzzle"
+  },
+  "victory": {
+    "title": "Congratulations",
+    "congratulations": "Well done!",
+    "message": "You've overcome all of Uncle Gaspard's traps and managed to find the bottle hidden in this mysterious trunk!",
+    "tastingTime": "It's now time for the tasting!",
+    "enjoyMessage": "We hope you enjoyed this unique experience!",
+    "feedbackPrompt": "If you enjoyed it, please leave us a review!",
+    "transportNote": "For transport, please put all game elements back inside the box and follow the instructions given when you picked up the trunk.",
+    "farewell": "And now, all that's left is to wish you",
+    "bonAppetit": "Enjoy Your Tasting",
+    "stats": {
+      "time": "Time",
+      "hintsUsed": "Hints used",
+      "solutionsUsed": "Solutions viewed"
+    }
+  },
+  "timer": {
+    "elapsed": "Time elapsed"
+  },
+  "common": {
+    "back": "Back",
+    "continue": "Continue",
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel"
+  }
+}

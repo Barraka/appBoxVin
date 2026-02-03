@@ -1,0 +1,67 @@
+{
+  "welcome": {
+    "title": "Le Dernier Millésime",
+    "subtitle": "Livret d'indices",
+    "tagline": "Une aventure signée Escape Yourself",
+    "startButton": "Commencer l'aventure",
+    "resumeButton": "Reprendre la partie",
+    "newGameButton": "Nouvelle partie",
+    "confirmReset": "Voulez-vous vraiment recommencer ? Votre progression sera perdue."
+  },
+  "introduction": {
+    "title": "Avant-Propos",
+    "readFirst": "À lire impérativement pour le bon déroulement du jeu",
+    "continueButton": "C'est parti !"
+  },
+  "tableOfContents": {
+    "title": "Table des Matières",
+    "boxOpening": "Ouverture de la Box",
+    "locked": "Verrouillé",
+    "available": "Disponible",
+    "completed": "Terminé",
+    "puzzle": "Énigme"
+  },
+  "boxOpening": {
+    "title": "Ouverture de la Box",
+    "step": "Étape",
+    "nextStep": "Étape suivante",
+    "done": "J'ai ouvert la Box !",
+    "backToMenu": "Retour au menu"
+  },
+  "puzzle": {
+    "hint": "Indice",
+    "solution": "Solution",
+    "revealHint": "Voir l'indice",
+    "revealSolution": "Voir la solution",
+    "completed": "J'ai résolu cette énigme !",
+    "alreadyCompleted": "Énigme résolue",
+    "backToMenu": "Retour au menu",
+    "nextPuzzle": "Énigme suivante"
+  },
+  "victory": {
+    "title": "Félicitations",
+    "congratulations": "Bravo à vous !",
+    "message": "Vous avez déjoué tous les pièges de l'oncle Gaspard et vous êtes parvenus à trouver la bouteille cachée dans cette mystérieuse malle !",
+    "tastingTime": "C'est maintenant l'heure de la dégustation !",
+    "enjoyMessage": "Nous espérons que vous avez apprécié cette expérience inédite !",
+    "feedbackPrompt": "Si vous avez apprécié, n'hésitez pas nous laisser un commentaire !",
+    "transportNote": "Pour faciliter le transport, merci de replacer l'intégralité des éléments de jeu à l'intérieur de la box et de suivre les indications qui vous ont été données lors du retrait de la malle.",
+    "farewell": "Et maintenant il ne me reste plus qu'à vous souhaiter",
+    "bonAppetit": "Bonne Dégustation",
+    "stats": {
+      "time": "Temps",
+      "hintsUsed": "Indices utilisés",
+      "solutionsUsed": "Solutions consultées"
+    }
+  },
+  "timer": {
+    "elapsed": "Temps écoulé"
+  },
+  "common": {
+    "back": "Retour",
+    "continue": "Continuer",
+    "yes": "Oui",
+    "no": "Non",
+    "cancel": "Annuler"
+  }
+}

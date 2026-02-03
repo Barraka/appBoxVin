@@ -1,0 +1,14 @@
+In this project I want to create a webapp that will be used for customers of Escape Yourself. It's an app this will be destined to the groups playing our "Box Vin".
+The "Box Vin" is our latest product regarding mobile Escape Box games. It is our 4th in total, so we have some experience with escape boxes, and how to operate them.
+Up till now, all our boxes have been managed by our GMs, either directly in our sites, or for on-demand experiences. That would be for example when 
+a company asks for our team to be at their site (or a remote site) for their company outing, where we physically bring the boxes and manage 
+the Escape Box session.
+What is new with this "Box Vin", is that we also allow an "antonomous" version, where the players come to pick up the Box, bring it to their home for example,
+and then bring it back later after playing / solving it. Meaning they will be on their own during the whole session / play time, which is around 1 hour.
+So this is the aim of this project, I want to build a web app that will serve as a "hint manager". The way I see it, they will connect to the app (via a QR code for example), and then start an "Box Vin" session.
+When the session is launched on the app, they will see a timer (which in itself has no impact because there is no specific end time, so it's just for information),
+as well as the possibility to have hints, depending on what step they are on.
+So we need to build it, keeping in mind that the players should be able to validate a step once they have done it, without having a single hint.
+Also, on a specific puzzle, they can have the ability to ask for a first, second, then third clue, and finally have the solution if they give up.
+Some steps may have only 2 clues for example, it may vary depending on the complexity of the puzzles.
+I want to build this using the usual tools that I know, React and ViteJS. It will be hosted on a specific url that I have access to.
