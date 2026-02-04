@@ -13,13 +13,13 @@ export default function PuzzleCard({
 
   const handleClick = () => {
     if (isClickable) {
-      navigate(`/puzzle/${puzzle.id}`)
+      navigate(`/derniermillesime/puzzle/${puzzle.id}`)
     }
   }
 
   const statusColors = {
     locked: 'bg-header/30 text-cream/30',
-    available: 'bg-header/80 text-cream hover:bg-header cursor-pointer',
+    available: 'bg-gold/20 text-cream border-2 border-gold hover:bg-gold/30 cursor-pointer',
     completed: 'bg-header/60 text-cream/80 hover:bg-header/80 cursor-pointer'
   }
 

@@ -102,6 +102,21 @@ body {
   animation: pulse 2s ease-in-out infinite;
 }
 
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--color-gold), 0 0 10px var(--color-gold);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--color-gold), 0 0 30px var(--color-gold), 0 0 45px var(--color-gold);
+    transform: scale(1.02);
+  }
+}
+
+.animate-glow {
+  animation: glow 1.5s ease-in-out infinite;
+}
+
 /* Button base styles */
 @layer components {
   .btn-primary {

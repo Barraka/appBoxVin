@@ -26,6 +26,8 @@
     "step": "Step",
     "nextStep": "Next step",
     "done": "I've opened the Box!",
+    "completed": "Box opened!",
+    "stepsSummary": "Steps summary:",
     "backToMenu": "Back to menu"
   },
   "puzzle": {
@@ -36,7 +38,9 @@
     "completed": "I've solved this puzzle!",
     "alreadyCompleted": "Puzzle solved",
     "backToMenu": "Back to menu",
-    "nextPuzzle": "Next puzzle"
+    "nextPuzzle": "Next puzzle",
+    "needHelp": "Need help?",
+    "hintsUsedSummary": "Hints viewed:"
   },
   "victory": {
     "title": "Congratulations",
@@ -56,6 +60,16 @@
   },
   "timer": {
     "elapsed": "Time elapsed"
+  },
+  "score": {
+    "possible": "Possible score",
+    "earned": "Score earned",
+    "total": "Total score",
+    "stars": "stars",
+    "perfect": "Perfect! No hints used!",
+    "great": "Excellent work!",
+    "good": "Well done!",
+    "completed": "Mission accomplished!"
   },
   "common": {
     "back": "Back",

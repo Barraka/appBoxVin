@@ -9,15 +9,13 @@ export const gameData = {
       title: "Avant-Propos",
       subtitle: "À lire impérativement pour le bon déroulement du jeu",
       paragraphs: [
-        "Bienvenue chers apprentis vignerons ! Vous voilà prêt à embarquer dans une toute nouvelle aventure pleine de saveurs et de mystères.",
-        "Ce livret sera votre guide tout au long de cette aventure !",
-        "Utilisez vos méninges pour résoudre les énigmes qui se mettront au travers de votre route et tentez de retrouver la bouteille cachée à l'intérieur de cette malle ! Mais, si l'une des énigmes qui se présente à vous semble trop ardue, n'hésitez pas à feuilleter les pages de ce livret pour vous aider.",
-        "Pour chaque énigme, vous aurez la possibilité de vous aider d'indices de 3 niveaux différents.",
-        "Si, malgré les indices, l'une des énigmes continue de vous causer du tort, vous aurez la possibilité de consulter la solution afin de ne pas entraver votre progression (mais on vous conseille de ne pas y recourir trop souvent et de vous challenger un peu) !",
+        "Ce application sera votre guide tout au long de cette aventure 🍷",
+        "Utilisez vos méninges pour résoudre les énigmes qui se mettront au travers de votre route et tentez de retrouver la bouteille cachée à l'intérieur de cette malle!",
+        "Cliquez sur chaque étape afin d'avoir la possibilité de vous aider d'indices de 3 niveaux différents. Mais attention! Plus vous demandez d'indices, moins vous marquerez des points! Et si malgré les indices, l'une des énigmes continue de vous causer du tort, vous aurez la possibilité de consulter la solution.\nPensez à valider chaque énigme pour passer au suivant.",
         "Pour rappel, votre force physique ne vous sera d'aucune utilité alors soyez précautionneux avec la malle. Hormis la lecture et le calcul, aucune connaissance particulière ne vous sera demandée.",
-        "Nous estimons le temps d'une partie à 1h30 mais prenez tout le temps dont vous aurez besoin pour découvrir tous les secrets de cette malle !"
+        "Nous estimons le temps d'une partie à 1h30 mais prenez tout le temps dont vous aurez besoin pour découvrir tous les secrets de cette malle!"
       ],
-      closing: "Maintenant, apprentis vignerons, c'est à vous de jouer !"
+      closing: ""
     },
     en: {
       title: "Foreword",
@@ -68,8 +66,8 @@ export const gameData = {
       },
       hints: [
         {
-          fr: "Placer la clé carrée dans les 2 serrures sur la face du labyrinthe et tourner les loquets",
-          en: "Place the square key in the 2 locks on the labyrinth face and turn the latches"
+          fr: "L'objet trouvé dans le petit sac est un aimant. Il devrait vous aider à ouvrir la malle",
+          en: "The object found in the small bag is a magnet. It should help you open the trunk"
         },
         {
           fr: "L'une des faces de la malle représente un labyrinthe, mais n'y a-t-il pas un autre élément sur la face opposée ?",
@@ -289,8 +287,8 @@ export const gameData = {
         }
       ],
       solution: {
-        fr: "Pour chaque étiquette, placez vous sur la couleurs correspondante de la roue des arômes et comptez en suivant le sens de la flèche. Placez le bouchon correspondant sur la trappe :\nJacinthe (5) – Gibier (4) – Amande (18) – Pin (11) – Laurier (2)",
-        en: "For each label, position yourself on the corresponding color of the aroma wheel and count following the arrow direction. Place the corresponding cork on the hatch:\nHyacinth (5) – Game (4) – Almond (18) – Pine (11) – Bay leaf (2)"
+        fr: "Pour chaque étiquette, placez vous sur la couleurs correspondante de la roue des arômes et comptez en suivant le sens de la flèche. Placez le bouchon correspondant sur la trappe :\n<span style=\"color: #a855f7\">Jacinthe (5)</span> – <span style=\"color: #3b82f6\">Gibier (4)</span> – <span style=\"color: #ef4444\">Amande (18)</span> – <span style=\"color: #22c55e\">Pin (11)</span> – <span style=\"color: #f97316\">Laurier (2)</span>",
+        en: "For each label, position yourself on the corresponding color of the aroma wheel and count following the arrow direction. Place the corresponding cork on the hatch:\n<span style=\"color: #a855f7\">Hyacinth (5)</span> – <span style=\"color: #3b82f6\">Game (4)</span> – <span style=\"color: #ef4444\">Almond (18)</span> – <span style=\"color: #22c55e\">Pine (11)</span> – <span style=\"color: #f97316\">Bay leaf (2)</span>"
       }
     }
   ],

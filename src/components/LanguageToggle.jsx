@@ -1,4 +1,6 @@
 import { useLanguage } from '../contexts/LanguageContext'
+import flagFr from '../assets/flag-fr.png'
+import flagEn from '../assets/flag-en.png'
 
 export default function LanguageToggle() {
   const { language, toggleLanguage } = useLanguage()
@@ -6,17 +8,20 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center gap-1 bg-wine-dark/50 px-3 py-1 rounded-full
+      className="flex items-center gap-1 bg-wine-dark/50 px-2 py-1 rounded-full
                  hover:bg-wine-dark transition-colors duration-200"
       aria-label={`Switch to ${language === 'fr' ? 'English' : 'French'}`}
     >
-      <span className={`text-sm font-medium ${language === 'fr' ? 'text-gold' : 'text-cream/50'}`}>
-        FR
-      </span>
-      <span className="text-cream/30">|</span>
-      <span className={`text-sm font-medium ${language === 'en' ? 'text-gold' : 'text-cream/50'}`}>
-        EN
-      </span>
+      <img
+        src={flagFr}
+        alt="Français"
+        className={`w-5 h-4 rounded-sm object-cover ${language === 'fr' ? 'ring-2 ring-gold' : 'opacity-40'}`}
+      />
+      <img
+        src={flagEn}
+        alt="English"
+        className={`w-5 h-4 rounded-sm object-cover ${language === 'en' ? 'ring-2 ring-gold' : 'opacity-40'}`}
+      />
     </button>
   )
 }

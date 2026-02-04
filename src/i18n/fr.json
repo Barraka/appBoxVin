@@ -26,6 +26,8 @@
     "step": "Étape",
     "nextStep": "Étape suivante",
     "done": "J'ai ouvert la Box !",
+    "completed": "Box ouverte !",
+    "stepsSummary": "Récapitulatif des étapes :",
     "backToMenu": "Retour au menu"
   },
   "puzzle": {
@@ -36,7 +38,9 @@
     "completed": "J'ai résolu cette énigme !",
     "alreadyCompleted": "Énigme résolue",
     "backToMenu": "Retour au menu",
-    "nextPuzzle": "Énigme suivante"
+    "nextPuzzle": "Énigme suivante",
+    "needHelp": "Besoin d'aide ?",
+    "hintsUsedSummary": "Indices consultés :"
   },
   "victory": {
     "title": "Félicitations",
@@ -56,6 +60,16 @@
   },
   "timer": {
     "elapsed": "Temps écoulé"
+  },
+  "score": {
+    "possible": "Score possible",
+    "earned": "Score obtenu",
+    "total": "Score total",
+    "stars": "étoiles",
+    "perfect": "Parfait ! Aucun indice utilisé !",
+    "great": "Excellent travail !",
+    "good": "Bien joué !",
+    "completed": "Mission accomplie !"
   },
   "common": {
     "back": "Retour",

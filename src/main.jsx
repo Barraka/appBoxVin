@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import { LanguageProvider } from './contexts/LanguageContext'
 import { SessionProvider } from './contexts/SessionContext'
+import { AudioProvider } from './contexts/AudioContext'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -11,7 +12,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <LanguageProvider>
         <SessionProvider>
-          <App />
+          <AudioProvider>
+            <App />
+          </AudioProvider>
         </SessionProvider>
       </LanguageProvider>
     </BrowserRouter>

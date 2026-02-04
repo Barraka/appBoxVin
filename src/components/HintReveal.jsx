@@ -60,9 +60,10 @@ export default function HintReveal({
           <p className="text-gold font-script text-2xl mb-2">
             {t('puzzle.solution')}
           </p>
-          <p className="text-cream text-sm leading-relaxed whitespace-pre-line">
-            {solution[language]}
-          </p>
+          <p
+            className="text-cream text-sm leading-relaxed whitespace-pre-line"
+            dangerouslySetInnerHTML={{ __html: solution[language] }}
+          />
         </div>
       )}
 

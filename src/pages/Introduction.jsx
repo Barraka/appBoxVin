@@ -10,7 +10,7 @@ export default function Introduction() {
   const intro = gameData.introduction[language]
 
   const handleContinue = () => {
-    navigate('/puzzles')
+    navigate('/derniermillesime/puzzles')
   }
 
   return (

@@ -2,22 +2,26 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useSession } from '../contexts/SessionContext'
+import { useAudio } from '../contexts/AudioContext'
 import Layout from '../components/Layout'
 
 export default function Welcome() {
   const navigate = useNavigate()
   const { t, language } = useLanguage()
   const { hasExistingSession, resetSession, startSession } = useSession()
+  const { play } = useAudio()
   const [showConfirm, setShowConfirm] = useState(false)
 
   const handleStart = () => {
+    play()
     startSession()
-    navigate('/introduction')
+    navigate('/derniermillesime/introduction')
   }
 
   const handleResume = () => {
+    play()
     startSession()
-    navigate('/puzzles')
+    navigate('/derniermillesime/puzzles')
   }
 
   const handleNewGame = () => {
@@ -25,9 +29,10 @@ export default function Welcome() {
       setShowConfirm(true)
       return
     }
+    play()
     resetSession()
     startSession()
-    navigate('/introduction')
+    navigate('/derniermillesime/introduction')
   }
 
   const hasSession = hasExistingSession()
@@ -38,9 +43,9 @@ export default function Welcome() {
       subtitle={t('welcome.subtitle')}
       showTimer={false}
     >
-      <div className="flex flex-col items-center justify-center min-h-[300px] space-y-6">
+      <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-6 py-4 relative">
         {/* Wine stain decoration */}
-        <div className="w-24 h-24 rounded-full bg-wine/30 blur-xl absolute" />
+        <div className="w-24 h-24 rounded-full bg-wine/30 blur-xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
         {/* Tagline */}
         <p className="text-cream/70 text-center italic">
@@ -48,7 +53,7 @@ export default function Welcome() {
         </p>
 
         {/* Buttons */}
-        <div className="w-full space-y-3 mt-8">
+        <div className="w-full space-y-3 mt-4 sm:mt-8">
           {hasSession ? (
             <>
               <button

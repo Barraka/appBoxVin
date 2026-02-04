@@ -4,8 +4,25 @@ import { gameData } from '../data/gameData'
 
 const SessionContext = createContext()
 
+// Fallback for non-secure contexts (HTTP)
+const generateId = () => {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    try {
+      return crypto.randomUUID()
+    } catch {
+      // Falls through to fallback
+    }
+  }
+  // Fallback: generate a simple unique ID
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = Math.random() * 16 | 0
+    const v = c === 'x' ? r : (r & 0x3 | 0x8)
+    return v.toString(16)
+  })
+}
+
 const createInitialState = () => ({
-  sessionId: crypto.randomUUID(),
+  sessionId: generateId(),
   startTime: null,
   elapsedTime: 0,
   isRunning: false,
@@ -67,6 +84,14 @@ export function SessionProvider({ children }) {
       ...prev,
       boxOpeningCompleted: true,
       currentBoxStep: gameData.boxOpening.length
+    }))
+  }, [])
+
+  const uncompleteBoxOpening = useCallback(() => {
+    setSession(prev => ({
+      ...prev,
+      boxOpeningCompleted: false,
+      gameCompleted: false
     }))
   }, [])
 
@@ -162,6 +187,28 @@ export function SessionProvider({ children }) {
     })
   }, [])
 
+  const uncompletePuzzle = useCallback((puzzleId) => {
+    setSession(prev => {
+      const currentProgress = prev.puzzleProgress[puzzleId] || {
+        hintsRevealed: 0,
+        solutionRevealed: false,
+        completed: false
+      }
+
+      return {
+        ...prev,
+        puzzleProgress: {
+          ...prev.puzzleProgress,
+          [puzzleId]: {
+            ...currentProgress,
+            completed: false
+          }
+        },
+        gameCompleted: false // If uncompleting, game is no longer complete
+      }
+    })
+  }, [])
+
   const getPuzzleProgress = useCallback((puzzleId) => {
     return session.puzzleProgress[puzzleId] || {
       hintsRevealed: 0,
@@ -171,12 +218,23 @@ export function SessionProvider({ children }) {
   }, [session.puzzleProgress])
 
   const isPuzzleUnlocked = useCallback((puzzleIndex) => {
+    // Puzzle 0 (Le Labyrinthe) is always available from the start
     if (puzzleIndex === 0) {
-      return session.boxOpeningCompleted
+      return true
+    }
+    // Puzzles 1+ require: Box Opening completed AND previous puzzle completed
+    if (!session.boxOpeningCompleted) {
+      return false
     }
     const previousPuzzle = gameData.puzzles[puzzleIndex - 1]
     return session.puzzleProgress[previousPuzzle?.id]?.completed || false
   }, [session.boxOpeningCompleted, session.puzzleProgress])
+
+  const isBoxOpeningUnlocked = useCallback(() => {
+    // Box Opening is unlocked after Puzzle 1 (Le Labyrinthe) is completed
+    const firstPuzzle = gameData.puzzles[0]
+    return session.puzzleProgress[firstPuzzle?.id]?.completed || false
+  }, [session.puzzleProgress])
 
   const hasExistingSession = useCallback(() => {
     return session.startTime !== null
@@ -188,12 +246,15 @@ export function SessionProvider({ children }) {
     pauseSession,
     resetSession,
     completeBoxOpening,
+    uncompleteBoxOpening,
     advanceBoxStep,
     revealHint,
     revealSolution,
     completePuzzle,
+    uncompletePuzzle,
     getPuzzleProgress,
     isPuzzleUnlocked,
+    isBoxOpeningUnlocked,
     hasExistingSession,
   }
 
