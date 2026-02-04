@@ -90,7 +90,7 @@ export default function BoxOpening() {
         )}
 
         {/* Steps revealed */}
-        {!isCompleted && gameData.boxOpening.slice(0, currentStep + 1).map((step, index) => (
+        {!isCompleted && currentStep > 0 && gameData.boxOpening.slice(0, currentStep).map((step, index) => (
           <div
             key={index}
             className="bg-header/80 rounded-xl p-4 animate-fadeIn"
@@ -105,13 +105,13 @@ export default function BoxOpening() {
         ))}
 
         {/* Next step button */}
-        {!isCompleted && currentStep < totalSteps - 1 && (
+        {!isCompleted && currentStep < totalSteps && (
           <button
             onClick={handleNextStep}
             className="w-full py-4 bg-wine-light rounded-xl text-cream font-medium
                        hover:bg-wine transition-colors duration-200"
           >
-            {t('boxOpening.step')} {currentStep + 2}
+            {t('boxOpening.step')} {currentStep + 1}
           </button>
         )}
 
