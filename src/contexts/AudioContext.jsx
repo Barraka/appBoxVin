@@ -1,6 +1,8 @@
 import { createContext, useContext, useState, useEffect, useRef, useCallback } from 'react'
 import { getFromStorage, saveToStorage } from '../utils/storage'
-import soundtrackSrc from '../assets/soundtrack.mp3'
+
+// Soundtrack is loaded from public URL (must be uploaded separately via FTP)
+const SOUNDTRACK_URL = '/assets/soundtrack.mp3'
 
 const AudioContext = createContext()
 
@@ -13,7 +15,7 @@ export function AudioProvider({ children }) {
 
   // Initialize audio element
   useEffect(() => {
-    const audio = new Audio(soundtrackSrc)
+    const audio = new Audio(SOUNDTRACK_URL)
     audio.loop = true
     audio.volume = 0.3
     audioRef.current = audio
