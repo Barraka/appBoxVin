@@ -46,3 +46,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: /
+          exclude: |
+            **/assets/soundtrack.mp3

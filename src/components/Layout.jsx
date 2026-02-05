@@ -28,21 +28,25 @@ export default function Layout({ children, showTimer = false, showLanguage = tru
         {/* Sticky header section */}
         <div className="sticky top-0 z-50 bg-header sm:rounded-t-3xl px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Score display (left side when timer is shown) */}
-            <div className="flex items-center gap-1 text-gold">
+            {/* Sound toggle (left) */}
+            <div className="w-10">
+              <SoundToggle />
+            </div>
+
+            {/* Score display (centered) */}
+            <div className="flex items-center gap-1.5 text-gold">
               {showTimer && (
                 <>
-                  <span className="text-sm font-mono">{totalScore}</span>
-                  <span className="text-xs text-cream/50">/</span>
-                  <span className="text-xs text-cream/50">{maxScore}</span>
-                  <span className="text-gold ml-0.5">★</span>
+                  <span className="text-lg font-mono font-semibold">{totalScore}</span>
+                  <span className="text-sm text-cream/50">/</span>
+                  <span className="text-sm text-cream/50">{maxScore}</span>
+                  <span className="text-gold text-lg ml-0.5">★</span>
                 </>
               )}
             </div>
 
-            {/* Sound and Language toggles */}
-            <div className="flex items-center gap-2 justify-end">
-              <SoundToggle />
+            {/* Language toggle (right) */}
+            <div className="w-10 flex justify-end">
               {showLanguage && <LanguageToggle />}
             </div>
           </div>

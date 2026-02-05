@@ -73,7 +73,7 @@ export default function Puzzle() {
       <div className="space-y-4">
         {/* Puzzle title */}
         <div className="text-center pb-2">
-          <h2 className="text-gold font-script text-3xl">{puzzle.title[language]}</h2>
+          <h2 className="text-gold font-script text-5xl font-bold">{puzzle.title[language]}</h2>
         </div>
 
         {/* Score display + Mark as complete button */}
