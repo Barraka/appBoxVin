@@ -88,7 +88,7 @@ export const gameData = {
       id: "enigme-2",
       number: "2",
       title: {
-        fr: "Le niveau des bouteilles",
+        fr: "Quatre petites bouteilles",
         en: "The Bottle Levels"
       },
       hints: [
@@ -171,7 +171,7 @@ export const gameData = {
       },
       hints: [
         {
-          fr: "Pour commencer, observer bien tous les éléments autour de vous.",
+          fr: "Pour commencer, observez bien toutes les faces de la box",
           en: "To start, observe all the elements around you carefully."
         },
         {
