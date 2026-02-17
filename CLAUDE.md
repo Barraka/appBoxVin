@@ -13,7 +13,7 @@ A customer-facing webapp for "Escape Yourself" escape room business. The app ser
 - **Routing**: React Router DOM 6
 - **State Management**: React Context API
 - **Persistence**: localStorage
-- **Hosting**: Self-hosted on dedicated URL
+- **Hosting**: Self-hosted on dedicated URL (auto-deployed via GitHub Actions + FTP)
 
 ## Development Commands
 
@@ -38,14 +38,18 @@ src/
 │   └── en.json                 # English UI strings
 ├── contexts/
 │   ├── LanguageContext.jsx     # Bilingual support (FR/EN)
-│   └── SessionContext.jsx      # Game state management
+│   ├── SessionContext.jsx      # Game state management
+│   └── AudioContext.jsx        # Soundtrack playback control
 ├── components/
 │   ├── Layout.jsx              # Wine bottle container UI
 │   ├── Timer.jsx               # Elapsed time display
 │   ├── LanguageToggle.jsx      # FR/EN switcher
-│   ├── HintReveal.jsx          # Progressive hint system
+│   ├── SoundToggle.jsx         # Soundtrack on/off toggle
+│   ├── ScoreDisplay.jsx        # Puzzle score display
+│   ├── HintReveal.jsx          # Progressive hint system + fullscreen image
 │   └── PuzzleCard.jsx          # Puzzle list item
 ├── pages/
+│   ├── HomePage.jsx            # Landing page / box selection
 │   ├── Welcome.jsx             # Start/resume screen
 │   ├── Introduction.jsx        # Avant-propos / rules
 │   ├── TableOfContents.jsx     # Puzzle navigation
@@ -66,12 +70,13 @@ src/
 ### Puzzle Progression
 - **Linear unlock**: Puzzles unlock sequentially (must complete puzzle N to access N+1)
 - **Box Opening**: First step before puzzles unlock
-- **9 Puzzles**: Le Labyrinthe, Le niveau des bouteilles, Les étiquettes, Le poème du vignoble, Les cépages, Les verres, Les fiches de dégustation, Les tire-bouchons, Les arômes
+- **9 Puzzles**: Le Labyrinthe, Quatre petites bouteilles, Les étiquettes, Le poème du vignoble, Les cépages, Les verres, Les fiches de dégustation, Les tire-bouchons, Les arômes
 
 ### Progressive Hint System
 - Each puzzle has 3 hints + 1 solution
 - Hints revealed progressively (tap to reveal next)
 - Solution only available after viewing all hints
+- Solutions can optionally include an image (with fullscreen viewer)
 - Players can complete puzzles without using any hints
 
 ### Bilingual Support
@@ -104,6 +109,8 @@ src/
 
 ## Architecture Notes
 
+- **Static assets**: Images referenced by path string in gameData go in `public/` (not `src/assets/`) so Vite serves them in production
+- **CI/CD**: GitHub Actions workflow (`.github/workflows/deploy.yml`) builds and deploys to FTP on every push to `main`
 - **Offline-first**: All content embedded, no API calls needed
 - **No authentication**: Session-based via localStorage
 - **Mobile-first**: Designed for phone screens (players use their devices)
