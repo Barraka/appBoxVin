@@ -1,6 +1,30 @@
 import { useState } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 
+function FullscreenImage({ src, alt, onClose }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 text-white text-3xl font-bold
+                   w-10 h-10 flex items-center justify-center
+                   bg-black/50 rounded-full hover:bg-black/70 transition-colors"
+      >
+        ×
+      </button>
+      <img
+        src={src}
+        alt={alt}
+        className="max-w-full max-h-full object-contain rounded-lg"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  )
+}
+
 export default function HintReveal({
   hints,
   solution,
@@ -11,6 +35,7 @@ export default function HintReveal({
 }) {
   const { language, t } = useLanguage()
   const [confirmSolution, setConfirmSolution] = useState(false)
+  const [showFullscreen, setShowFullscreen] = useState(false)
 
   const allHintsRevealed = hintsRevealed >= hints.length
   const canRevealSolution = allHintsRevealed && !solutionRevealed
@@ -64,7 +89,33 @@ export default function HintReveal({
             className="text-cream text-sm leading-relaxed whitespace-pre-line"
             dangerouslySetInnerHTML={{ __html: solution[language] }}
           />
+          {solution.image && (
+            <>
+              <img
+                src={solution.image}
+                alt={t('puzzle.solution')}
+                className="mt-3 w-full rounded-lg cursor-pointer
+                           border border-cream/20 hover:border-gold/50 transition-colors"
+                onClick={() => setShowFullscreen(true)}
+              />
+              <p
+                className="text-cream/50 text-xs text-center mt-1 cursor-pointer"
+                onClick={() => setShowFullscreen(true)}
+              >
+                {language === 'fr' ? 'Appuyez pour agrandir' : 'Tap to enlarge'}
+              </p>
+            </>
+          )}
         </div>
+      )}
+
+      {/* Fullscreen image overlay */}
+      {showFullscreen && solution.image && (
+        <FullscreenImage
+          src={solution.image}
+          alt={t('puzzle.solution')}
+          onClose={() => setShowFullscreen(false)}
+        />
       )}
 
       {/* Solution button (only after all hints) */}

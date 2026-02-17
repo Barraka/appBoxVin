@@ -79,8 +79,9 @@ export const gameData = {
         }
       ],
       solution: {
-        fr: "Séparez-vous en 2 équipes, une à chaque face de la malle. Placez l'aimant sur la clé et reproduisez le labyrinthe grâce aux indications de l'autre équipe",
-        en: "Split into 2 teams, one on each side of the trunk. Place the magnet on the key and reproduce the labyrinth using the other team's directions"
+        fr: "Voici le chemin à suivre :",
+        en: "Here is the path to follow:",
+        image: "/Solution Labyrinthe Box Vin.jpg"
       }
     },
     {
